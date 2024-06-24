@@ -49,42 +49,42 @@ The goal is to find the minimum total cost over the entire planning horizon. By 
 
 Dynamic Programming is chosen for this inventory management problem because it effectively handles the complexities of decision-making over time with overlapping subproblems and optimal substructure. It allows efficient computation of the minimum cost and optimal restocking plan by breaking down the problem into smaller, manageable subproblems and storing intermediate results in a table for reuse. This approach ensures that the solution is both optimal and computationally efficient given the constraints of the problem.
 ## Explanation of the Data Format
-ItemA:
+**ItemA:**
 Lead Time: 5 days
 Safety Stock Days: 3 days
 Current Stock: 100 units
 Sales History (daily demand): 20, 25, 30, 15, 10, 5, 0
-ItemB:
+**ItemB:**
 Lead Time: 7 days
 Safety Stock Days: 2 days
 Current Stock: 150 units
 Sales History (daily demand): 40, 30, 20, 10, 25, 35, 30, 25, 20
-ItemC:
+**ItemC:**
 Lead Time: 10 days
 Safety Stock Days: 5 days
 Current Stock: 200 units
 Sales History (daily demand): 50, 60, 70, 80, 90, 100, 110, 120, 130
-ItemD:
+**ItemD:**
 Lead Time: 3 days
 Safety Stock Days: 4 days
 Current Stock: 80 units
 Sales History (daily demand): 10, 20, 15, 25, 30, 35, 40
-ItemE:
+**ItemE:**
 Lead Time: 8 days
 Safety Stock Days: 1 day
 Current Stock: 50 units
 Sales History (daily demand): 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55
 ## Explanation of InventoryItem Class
-Fields: itemName, initialStock, dailyDemand, leadTime, safetyStockDays are attributes of an inventory item.
-Constructor: Initializes an InventoryItem object with the provided parameters.
-minimizeInventoryCost(): Uses dynamic programming to calculate the minimum inventory cost over a period (dailyDemand array length).
+**Fields:** itemName, initialStock, dailyDemand, leadTime, safetyStockDays are attributes of an inventory item.
+**Constructor:** Initializes an InventoryItem object with the provided parameters.
+**minimizeInventoryCost():** Uses dynamic programming to calculate the minimum inventory cost over a period (dailyDemand array length).
 Uses a DP table (dp[day][stock]) to store the minimum cost up to each day with varying stock levels.
 Handles restocking and calculates costs based on stock levels, demands, and costs (holdingCostPerUnit, stockoutCostPerUnit, restockCostPerUnit).
-printInventoryPlan(): Prints the day-by-day inventory restocking plan.
+**printInventoryPlan():** Prints the day-by-day inventory restocking plan.
 Uses the same DP table to determine the optimal restocking strategy for each day.
 Prints the day number and the optimal units to restock.
 ## Explanation of InventoryManagementDP Class:
-main() Method: Entry point of the program.
+**main() Method:** Entry point of the program.
 Uses a Scanner to read from data.txt file (assumed to be in the same directory).
 Parses each line of data.txt to extract item details (itemName, leadTime, safetyStockDays, initialStock, dailyDemand).
 Creates an InventoryItem object for each line of data.
@@ -93,6 +93,7 @@ Prints the results to the console.
 
 ## Explanation of Output
 ### Example of Output
+```
 Calculating minimum inventory cost for ItemA...
 Minimum inventory cost: 365
 
@@ -177,6 +178,7 @@ Day 11: Restock 55 units
 Execution time: 21 ms
 
 Total execution time: 200 ms
+```
 
 ### Calculations and Plans
 
