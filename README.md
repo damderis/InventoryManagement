@@ -48,8 +48,135 @@ The goal is to find the minimum total cost over the entire planning horizon. By 
 ### Conclusion
 
 Dynamic Programming is chosen for this inventory management problem because it effectively handles the complexities of decision-making over time with overlapping subproblems and optimal substructure. It allows efficient computation of the minimum cost and optimal restocking plan by breaking down the problem into smaller, manageable subproblems and storing intermediate results in a table for reuse. This approach ensures that the solution is both optimal and computationally efficient given the constraints of the problem.
+## Explanation of the Data Format
+ItemA:
+Lead Time: 5 days
+Safety Stock Days: 3 days
+Current Stock: 100 units
+Sales History (daily demand): 20, 25, 30, 15, 10, 5, 0
+ItemB:
+Lead Time: 7 days
+Safety Stock Days: 2 days
+Current Stock: 150 units
+Sales History (daily demand): 40, 30, 20, 10, 25, 35, 30, 25, 20
+ItemC:
+Lead Time: 10 days
+Safety Stock Days: 5 days
+Current Stock: 200 units
+Sales History (daily demand): 50, 60, 70, 80, 90, 100, 110, 120, 130
+ItemD:
+Lead Time: 3 days
+Safety Stock Days: 4 days
+Current Stock: 80 units
+Sales History (daily demand): 10, 20, 15, 25, 30, 35, 40
+ItemE:
+Lead Time: 8 days
+Safety Stock Days: 1 day
+Current Stock: 50 units
+Sales History (daily demand): 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55
+## Explanation of InventoryItem Class
+Fields: itemName, initialStock, dailyDemand, leadTime, safetyStockDays are attributes of an inventory item.
+Constructor: Initializes an InventoryItem object with the provided parameters.
+minimizeInventoryCost(): Uses dynamic programming to calculate the minimum inventory cost over a period (dailyDemand array length).
+Uses a DP table (dp[day][stock]) to store the minimum cost up to each day with varying stock levels.
+Handles restocking and calculates costs based on stock levels, demands, and costs (holdingCostPerUnit, stockoutCostPerUnit, restockCostPerUnit).
+printInventoryPlan(): Prints the day-by-day inventory restocking plan.
+Uses the same DP table to determine the optimal restocking strategy for each day.
+Prints the day number and the optimal units to restock.
+## Explanation of InventoryManagementDP Class:
+main() Method: Entry point of the program.
+Uses a Scanner to read from data.txt file (assumed to be in the same directory).
+Parses each line of data.txt to extract item details (itemName, leadTime, safetyStockDays, initialStock, dailyDemand).
+Creates an InventoryItem object for each line of data.
+Calculates the minimum inventory cost and generates the inventory restocking plan for each item.
+Prints the results to the console.
 
 ## Explanation of Output
+### Example of Output
+Calculating minimum inventory cost for ItemA...
+Minimum inventory cost: 365
+
+Generating inventory restock plan for ItemA...
+Day-by-day Inventory Plan for ItemA:
+Day 1: Restock 0 units
+Day 2: Restock 0 units
+Day 3: Restock 0 units
+Day 4: Restock 0 units
+Day 5: Restock 0 units
+Day 6: Restock 5 units
+Day 7: Restock 0 units
+
+Execution time: 68 ms
+
+Calculating minimum inventory cost for ItemB...
+Minimum inventory cost: 1075
+
+Generating inventory restock plan for ItemB...
+Day-by-day Inventory Plan for ItemB:
+Day 1: Restock 0 units
+Day 2: Restock 0 units
+Day 3: Restock 0 units
+Day 4: Restock 0 units
+Day 5: Restock 0 units
+Day 6: Restock 10 units
+Day 7: Restock 30 units
+Day 8: Restock 25 units
+Day 9: Restock 20 units
+
+Execution time: 58 ms
+
+Calculating minimum inventory cost for ItemC...
+Minimum inventory cost: 3570
+
+Generating inventory restock plan for ItemC...
+Day-by-day Inventory Plan for ItemC:
+Day 1: Restock 0 units
+Day 2: Restock 0 units
+Day 3: Restock 0 units
+Day 4: Restock 60 units
+Day 5: Restock 90 units
+Day 6: Restock 100 units
+Day 7: Restock 110 units
+Day 8: Restock 120 units
+Day 9: Restock 130 units
+
+Execution time: 25 ms
+
+Calculating minimum inventory cost for ItemD...
+Minimum inventory cost: 805
+
+Generating inventory restock plan for ItemD...
+Day-by-day Inventory Plan for ItemD:
+Day 1: Restock 0 units
+Day 2: Restock 0 units
+Day 3: Restock 0 units
+Day 4: Restock 0 units
+Day 5: Restock 20 units
+Day 6: Restock 35 units
+Day 7: Restock 40 units
+
+Execution time: 16 ms
+
+Calculating minimum inventory cost for ItemE...
+Minimum inventory cost: 1600
+
+Generating inventory restock plan for ItemE...
+Day-by-day Inventory Plan for ItemE:
+Day 1: Restock 0 units
+Day 2: Restock 0 units
+Day 3: Restock 0 units
+Day 4: Restock 0 units
+Day 5: Restock 25 units
+Day 6: Restock 30 units
+Day 7: Restock 35 units
+Day 8: Restock 40 units
+Day 9: Restock 45 units
+Day 10: Restock 50 units
+Day 11: Restock 55 units
+
+Execution time: 21 ms
+
+Total execution time: 200 ms
 
 ### Calculations and Plans
 
