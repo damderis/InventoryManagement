@@ -53,22 +53,22 @@ Dynamic Programming is chosen for this inventory management problem because it e
 Lead Time: 5 days
 Safety Stock Days: 3 days
 Current Stock: 100 units
-Sales History (daily demand): 20, 25, 30, 15, 10, 5, 0
+Sales History (daily demand): 20, 25, 30, 15, 10, 5, 0 \
 **ItemB:**
 Lead Time: 7 days
 Safety Stock Days: 2 days
 Current Stock: 150 units
-Sales History (daily demand): 40, 30, 20, 10, 25, 35, 30, 25, 20
+Sales History (daily demand): 40, 30, 20, 10, 25, 35, 30, 25, 20 \
 **ItemC:**
 Lead Time: 10 days
 Safety Stock Days: 5 days
 Current Stock: 200 units
-Sales History (daily demand): 50, 60, 70, 80, 90, 100, 110, 120, 130
+Sales History (daily demand): 50, 60, 70, 80, 90, 100, 110, 120, 130 \
 **ItemD:**
 Lead Time: 3 days
 Safety Stock Days: 4 days
 Current Stock: 80 units
-Sales History (daily demand): 10, 20, 15, 25, 30, 35, 40
+Sales History (daily demand): 10, 20, 15, 25, 30, 35, 40 \
 **ItemE:**
 Lead Time: 8 days
 Safety Stock Days: 1 day
